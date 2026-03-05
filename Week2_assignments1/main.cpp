@@ -11,6 +11,7 @@ void UIsystem()
 	std::cout << "4. 방어력 UP" << std::endl;
 	std::cout << "5. 현재 능력치" << std::endl;
 	std::cout << "6. Level UP" << std::endl;
+	std::cout << "7. 포션 충전" << std::endl;
 	std::cout << "0. 나가기" << std::endl;
 }
 
@@ -57,6 +58,10 @@ int main()
 		else if (input_num == 6)
 		{
 			test.levelUp();
+		}
+		else if (input_num == 7)
+		{
+			test.RechargePotion();
 		}
 		//if(입력받은 값이 0이면)
 		//"프로그램 종료 출력"

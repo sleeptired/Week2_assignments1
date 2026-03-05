@@ -1,7 +1,7 @@
 #include <iostream>
 #include "Character.h"
 
-Character::Character() : status{ 0,0,0,0 }, HPPotion(0), MPPotion(0)
+Character::Character() : status{ 0,0,0,0 }, HPPotion(0), MPPotion(0), level(1)
 {
 
 }
@@ -87,12 +87,20 @@ int Character::GetDef()
 
 void Character::GetStatus()
 {
-	std::cout << "* HP : " << status[0] << ", MP : " << status[1] << ", 공격력 : " << status[2] << ", 방어력 : " << status[3] << std::endl;
+	std::cout << "* HP : " << status[0] << ", MP : " << status[1] << ", 공격력 : " << status[2] << ", 방어력 : " << status[3] << ", level : " << level
+		<< ", HP 포션 : " << HPPotion << ", MP 포션 : " << MPPotion << std::endl;
 }
 
 void Character::levelUp()
 {
-	std::cout << "* 레벨업! HP/MP 포션이 지급됩니다." << std::endl;
+	std::cout << "* 레벨업!" << std::endl;
+	level += 1;
+	std::cout << "현재 level: " << level << std::endl;
+}
+
+void Character::RechargePotion()
+{
+	std::cout << "* HP/MP 포션이 지급됩니다." << std::endl;
 	HPPotion += 1;
 	MPPotion += 1;
 	std::cout << "남은 HP/MP 포션 수 : " << HPPotion << "/" << MPPotion << std::endl;
@@ -120,7 +128,7 @@ void Character::UpHP()
 		HPPotion -= 1;
 		std::cout << "* HP가 20 증가되었습니다. 포션이 1개 차감됩니다." << std::endl;
 		std::cout << "현재 HP: " << status[0] << std::endl;
-		std::cout << "남은 포션 수: " << HPPotion << std::endl;
+		std::cout << "남은 HP 포션 수: " << HPPotion << std::endl;
 	}
 }
 
@@ -136,7 +144,7 @@ void Character::UpMP()
 		MPPotion -= 1;
 		std::cout << "* MP가 20 증가되었습니다. 포션이 1개 차감됩니다." << std::endl;
 		std::cout << "현재 MP: " << status[1] << std::endl;
-		std::cout << "남은 포션 수: " << MPPotion << std::endl;
+		std::cout << "남은 MP 포션 수: " << MPPotion << std::endl;
 	}
 }
 

@@ -21,11 +21,11 @@ public:
 	void Updef();//4번
 	void GetStatus();//5번
 	void levelUp();//6번
-
+	void RechargePotion();
 private:
 	int status[4];
 	int HPPotion, MPPotion;
-
+	int level;
 	//status[0]은 HP, status[1]은 MP, status[2]는 공격력 status[3]은 방어력
 
 };
